@@ -44,3 +44,33 @@ Compile the homomorphic frequent subgraph mining part using `./build.sh` in the 
 
 ## Datasets
 The graph datasets used in our paper can be downloaded [here](https://drive.google.com/drive/folders/1VodFmIh5UZ4pShYM58x11iR_aRBD9PZ3?usp=drive_link).
+
+## References
+@article{sun2022depth,
+  title={An in-depth study of continuous subgraph matching},
+  author={Sun, Xibo and Sun, Shixuan and Luo, Qiong and He, Bingsheng},
+  journal={Proceedings of the VLDB Endowment},
+  volume={15},
+  number={7},
+  pages={1403--1416},
+  year={2022},
+  publisher={VLDB Endowment}
+}
+
+@article{elseidy2014grami,
+  title={Grami: Frequent subgraph and pattern mining in a single large graph},
+  author={Elseidy, Mohammed and Abdelhamid, Ehab and Skiadopoulos, Spiros and Kalnis, Panos},
+  journal={Proceedings of the VLDB Endowment},
+  volume={7},
+  number={7},
+  pages={517--528},
+  year={2014},
+  publisher={VLDB Endowment}
+}
+@inproceedings{vezvaei2022fine,
+  title={Fine-Tuning Dependencies with Parameters.},
+  author={Vezvaei, Alireza and Golab, Lukasz and Kargar, Mehdi and Srivastava, Divesh and Szlichta, Jaroslaw and Zihayat, Morteza},
+  booktitle={EDBT},
+  pages={2--393},
+  year={2022}
+}
