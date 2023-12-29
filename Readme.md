@@ -41,3 +41,6 @@ Compile the homomorphic frequent subgraph mining part using `./build.sh` in the 
 - File formats in `example\test\process_1_producer\purePattern2` should be `(num:NodeType)-[EdgeType]->(Num:NodeType)`.
 - The format for `example\test\process_2_producer\pre_Table` should be specified.
 - A Yago subset example is provided. To mine graph differential dependencies, run `python minGDD.py -c -s -a` in `example\test\process_3_producer\proTable_meaning`.
+
+## Datasets
+The graph datasets used in our paper can be downloaded [here](https://drive.google.com/drive/folders/1VodFmIh5UZ4pShYM58x11iR_aRBD9PZ3?usp=drive_link).
