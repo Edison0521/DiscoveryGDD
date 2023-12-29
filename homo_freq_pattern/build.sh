@@ -1,0 +1,1 @@
+g++ -o gpmh mining.cpp globals.cpp graph.cpp graphflow.cpp matching.cpp graph_processing.cpp -fdiagnostics-color=always -std=c++17 -g -O3 -Wall -I. -pthread 
