@@ -7,7 +7,7 @@ While several approaches for GED mining have been developed, existing methods ca
 In this paper, we propose a novel GDD mining approach combining graph partitioning, frequent graph pattern mining, redundancy removal of graph patterns, homomorphic subgraphs matching, and differential dependency mining.
 We implement the graph pattern mining and GDD mining respectively and simplify graph patterns and data graphs to improve its efficiency. 
 Using real-life and synthetic datasets and comparing with the state-of-the-art approach of GDD mining, we experimentally verify the efficiency of the algorithm.
-![pipeline](gdd_pipeline.pdf)
+![pipeline](gdd_pipeline.jpg)
 ## System Requirements
 - Java 1.8
 - C++17 and GCC 7.x or later
@@ -30,11 +30,84 @@ GraphMatching
 run `./gpmh -d /datasets/data.txt -t 4`
 Output subgraph matching records separated by -------, displaying the number of subgraphs at the end.
 ### inputfile:(data.txt)
+```
+v 0 0
+v 1 0
+v 2 0
+...
+v 20 2
+e 0 9 0
+e 2 9 0
+e 1 9 0
+e 3 13 0
+...
+e 15 20 2
+```
 ### outputfile(output.txt)
+```
+0 9 
+1 9 
+...
+6 15 
+8 17 
+--------------------------------------------- 
+0 9 0 
+0 9 1 
+...
+8 17 5 
+8 17 8 
+--------------------------------------------- 
+0 9 0 10 
+0 9 0 11 
+...
+8 17 5 14 
+5 17 8 14 
+8 17 8 14 
+--------------------------------------------- 
+0 9 0 10 0 
+0 9 0 10 1 
+1 9 0 10 0 
+1 9 0 10 1 
+2 9 0 10 0 
+2 9 0 10 1 
+...
+8 17 8 14 5 
+8 17 8 14 8 
+--------------------------------------------- 
+--------------------------------------------- 
+total subgraph number is  4 
+Algorithm execution time: 0.0223419 seconds 
+
+```
 GDD Discovering:
 `cd GDD`
 run `python minGDD.py 1 3 5`
 inputfile(produce_Table0.txt)
+```
+(7356:Taxon0).id;;(7356:Taxon0).name;;(7356:Taxon0).image;;(7356:Taxon1).id;;(7356:Taxon1).name;;(7356:Taxon1).image
+1;;Craugastor_pygmaeus;;null;;234895;;Craugastor;;Craugastor%20longirostris.jpg
+100045;;Ecleora;;Ecleora%20solieraria.jpg;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
+100047;;Tlepolemus_(genus);;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
+10006;;Peridrome;;Peridrome%20orbicularis%2C%20female%20%28Noctuidae%20Aganainae%29.jpg;;393091;;Noctuidae;;Scoliopteryx%20libatrix1.jpg
+100070;;Megachile_mlunguziensis;;null;;377999;;Megachile;;Megachile%20lagopoda%201.jpg
+100079;;Coleophora_pennella;;Coleophora%20pennella.JPG;;349137;;Coleophora;;Coleophora.striatipennella.-.lindsey.jpg
+100088;;Heliophobus;;Dictyestra%20dissectus.jpg;;393091;;Noctuidae;;Scoliopteryx%20libatrix1.jpg
+1001;;Euomoea;;null;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
+100112;;Cephena;;Pl.6-17-Cephena%20costata%20Moore%2C%201882.JPG;;393091;;Noctuidae;;Scoliopteryx%20libatrix1.jpg
+100142;;Athylia;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
+100163;;Calostigiodes;;null;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
+100263;;Cardalena;;null;;393091;;Noctuidae;;Scoliopteryx%20libatrix1.jpg
+100268;;Velledopsis;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
+100287;;Xylergates;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
+100351;;Plesiophyle;;null;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
+100400;;Colotois;;Geometridae%20-%20Colotois%20pennaria.JPG;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
+100425;;Agathiopsis;;39-Agathia%20benedicta%3DAgathiopsis%20maculata%20Warren%2C%201896.JPG;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
+10044;;Canidia;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
+10045;;Falsicingulidae;;null;;102555;;Rissooidea;;P%20antipodarum.jpg
+10045;;Falsicingulidae;;null;;366850;;Truncatelloidea;;Antrobia%20culveri.jpg
+100451;;Tyloxoles;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
+...
+```
 outputfile like:
 ``` Taxon.image=Megachile%20cetera%20f.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 120 0.22789425706472197
 	Taxon.image=Megachile%20aethiops%20f2.jpg 0.24;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 48 0.22789425706472197
