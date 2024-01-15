@@ -25,9 +25,13 @@ Compile the homomorphic frequent subgraph mining part using `./build.sh` in the 
 
 ## Demo
 GraphMatching
+
 `cd homo_freq_pattern`
+
 `./build.sh`
+
 run `./gpmh -d /datasets/data.txt -t 4`
+
 Output subgraph matching records separated by -------, displaying the number of subgraphs at the end.
 ### inputfile:(data.txt)
 ```
@@ -97,23 +101,16 @@ inputfile(produce_Table0.txt)
 100079;;Coleophora_pennella;;Coleophora%20pennella.JPG;;349137;;Coleophora;;Coleophora.striatipennella.-.lindsey.jpg
 100088;;Heliophobus;;Dictyestra%20dissectus.jpg;;393091;;Noctuidae;;Scoliopteryx%20libatrix1.jpg
 1001;;Euomoea;;null;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
-100112;;Cephena;;Pl.6-17-Cephena%20costata%20Moore%2C%201882.JPG;;393091;;Noctuidae;;Scoliopteryx%20libatrix1.jpg
-100142;;Athylia;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
-100163;;Calostigiodes;;null;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
-100263;;Cardalena;;null;;393091;;Noctuidae;;Scoliopteryx%20libatrix1.jpg
-100268;;Velledopsis;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
-100287;;Xylergates;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
-100351;;Plesiophyle;;null;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
-100400;;Colotois;;Geometridae%20-%20Colotois%20pennaria.JPG;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
-100425;;Agathiopsis;;39-Agathia%20benedicta%3DAgathiopsis%20maculata%20Warren%2C%201896.JPG;;214325;;Geometer_moth;;Geometer%20Moth%20Problepsis%20vulgaris.jpg
-10044;;Canidia;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
+...
 10045;;Falsicingulidae;;null;;102555;;Rissooidea;;P%20antipodarum.jpg
 10045;;Falsicingulidae;;null;;366850;;Truncatelloidea;;Antrobia%20culveri.jpg
 100451;;Tyloxoles;;null;;383678;;Longhorn_beetle;;Batus%20barbicornis%20MHNT%20femelle.jpg
 ...
 ```
 outputfile like:
-``` Taxon.image=Megachile%20cetera%20f.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 120 0.22789425706472197
+``` 
+	Taxon.image=Megachile%20cetera%20f.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 120 0.22789425706472197
+	...
 	Taxon.image=Megachile%20aethiops%20f2.jpg 0.24;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 48 0.22789425706472197
 	Taxon.image=Megachile%20rhodura.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 108 0.22789425706472197
 	Taxon.image=Megachile%20monkmani%20f.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 120 0.22789425706472197
