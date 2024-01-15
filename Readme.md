@@ -1,7 +1,13 @@
 
 
 # README
-
+## Discovering Graph Differential Dependencies 
+Graph differential dependencies (GDDs) provide a primitive form of integrity constraints to specify a fundamental part of the semantics of the data, which plays a key role in entity resolution. 
+While several approaches for GED mining have been developed, existing methods cannot handle GDD mining efficiently. 
+In this paper, we propose a novel GDD mining approach combining graph partitioning, frequent graph pattern mining, redundancy removal of graph patterns, homomorphic subgraphs matching, and differential dependency mining.
+We implement the graph pattern mining and GDD mining respectively and simplify graph patterns and data graphs to improve its efficiency. 
+Using real-life and synthetic datasets and comparing with the state-of-the-art approach of GDD mining, we experimentally verify the efficiency of the algorithm.
+![pipeline](gdd_pipeline.pdf)
 ## System Requirements
 - Java 1.8
 - C++17 and GCC 7.x or later
@@ -16,6 +22,30 @@
 
 ## Compilation
 Compile the homomorphic frequent subgraph mining part using `./build.sh` in the `homo_freq_pattern` folder. Run with parameters `./gpmh -d file-t Threshold`.
+
+## Demo
+GraphMatching
+`cd homo_freq_pattern`
+`./build.sh`
+run `./gpmh -d /datasets/data.txt -t 4`
+Output subgraph matching records separated by -------, displaying the number of subgraphs at the end.
+### inputfile:(data.txt)
+### outputfile(output.txt)
+GDD Discovering:
+`cd GDD`
+run `python minGDD.py 1 3 5`
+inputfile(produce_Table0.txt)
+outputfile like:
+``` Taxon.image=Megachile%20cetera%20f.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 120 0.22789425706472197
+	Taxon.image=Megachile%20aethiops%20f2.jpg 0.24;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 48 0.22789425706472197
+	Taxon.image=Megachile%20rhodura.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 108 0.22789425706472197
+	Taxon.image=Megachile%20monkmani%20f.jpg 0.36;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 120 0.22789425706472197
+	Taxon.image=Megachile%20clypeata%20f.jpg 0.24;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 55 0.22789425706472197
+	Taxon.image=Megachile%20obtusa%20f.jpg 0.24;;(7356:Taxon1).image=(7356:Taxon0).image 0.03->(7356:Taxon1).name=(7356:Taxon0).name 0.41 support is 57 0.22789425706472197
+	;;before: dependency number 14060
+	;;after: dependency number 14060
+	;;time cost: 998.6029007434845 s
+```
 
 ## Execution Steps
 1. **Graph Sampling**: 
