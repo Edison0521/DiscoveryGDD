@@ -21,7 +21,7 @@ Using real-life and synthetic datasets and comparing with the state-of-the-art a
 - multiprocessing
 
 ## Compilation
-Compile the homomorphic frequent subgraph mining part using `./build.sh` in the `homo_freq_pattern` folder. Run with parameters `./gpmh -d file-t Threshold`.
+Compile the homomorphic frequent subgraph mining part using `./build.sh` in the `homo_freq_pattern` folder. Run with parameters `./gpmh -d file -t Threshold`.
 
 ## Demo
 GraphMatching
@@ -80,6 +80,7 @@ Algorithm execution time: 0.0223419 seconds
 
 ```
 GDD Discovering:
+
 `cd GDD`
 
 run `python minGDD.py 1 3 5`
