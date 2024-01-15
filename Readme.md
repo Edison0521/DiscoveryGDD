@@ -81,8 +81,11 @@ Algorithm execution time: 0.0223419 seconds
 ```
 GDD Discovering:
 `cd GDD`
+
 run `python minGDD.py 1 3 5`
+
 inputfile(produce_Table0.txt)
+
 ```
 (7356:Taxon0).id;;(7356:Taxon0).name;;(7356:Taxon0).image;;(7356:Taxon1).id;;(7356:Taxon1).name;;(7356:Taxon1).image
 1;;Craugastor_pygmaeus;;null;;234895;;Craugastor;;Craugastor%20longirostris.jpg
