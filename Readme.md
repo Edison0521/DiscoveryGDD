@@ -121,7 +121,7 @@ outputfile like:
 	;;time cost: 998.6029007434845 s
 ```
 
-## Execution Steps
+## Full Execution Steps
 1. **Graph Sampling**: 
    - Run `j2p.py` in `\example\resource`.
    - Paste the result file path into `main.py` in the `sampling` folder. This generates `subgraph.csv`.
